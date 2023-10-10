@@ -113,6 +113,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"
+                                >Games</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
                                 ><span class="material-symbols-outlined"
                                     >add</span
                                 ></a
@@ -124,13 +129,13 @@
                     <div class="col-sm-4 mb-3 mb-sm-0">
                         <div class="card">
                             <img
-                                src="public/images/castle.png"
+                                src="public/images/beer.png"
                                 class="card-img-top"
                                 alt="..." />
                             <div class="card-body">
-                                <h5 class="card-title">Castle</h5>
+                                <h5 class="card-title">Beer</h5>
                                 <p class="card-text">
-                                    Author: <b>Luis Saavedra</b>
+                                    Author: <b>Lszart</b>
                                 </p>
                                 <a href="#" class="btn btn-primary"
                                     >Add to category</a
@@ -142,12 +147,13 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <img
-                                src="public/images/monk.png"
+                                src="public/images/palace.png"
                                 class="card-img-top"
                                 alt="..." />
                             <div class="card-body">
-                                <h5 class="card-title">Monk</h5>
-                                <p class="card-text">Author: <b>Lszart</b></p>
+                                <h5 class="card-title">Palace</h5>
+                                <p class="card-text">Author: <b>Vagrant</b></p>
+                                <p><span class="badge text-bg-secondary">Games</span></p>
                                 <a href="#" class="btn btn-primary"
                                     >Add to category</a
                                 >
