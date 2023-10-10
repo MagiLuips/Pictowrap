@@ -1,0 +1,35 @@
+html,
+body {
+    height: 100%;
+    /*
+    background-color: var(--pictowrap-gb-1);
+    color: var(--pictowrap-gb-5);
+    */
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin {
+    z-index: 2;
+}
+
+/*
+.form-signin h1 {
+    font-family: "Rubik";
+}
+
+.form-floating input {
+    background-color: var(--pictowrap-gb-1);
+}
+*/
+
+.form-signin input[name="username"] {
+    margin-bottom: 20px;
+}
+
+.form-signin input[name="passkey"] {
+    margin-bottom: 10px;
+}
