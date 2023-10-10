@@ -13,7 +13,7 @@
         }
 
         function mensaje() {
-            
+            echo 'Mensaje!';
         }
     }
 ?>
