@@ -3,9 +3,9 @@
         function __construct() {
             parent::__construct();
         }
-        function mensaje(){
-            echo 5+5;
+        function render() {
+            $this -> view -> render('forum');
         }
-    }
+    } 
 
 ?>
