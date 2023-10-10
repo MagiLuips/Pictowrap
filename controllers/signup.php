@@ -1,11 +1,11 @@
 <?php
-    class Main extends Controller {
+    class Signup extends Controller {
         function __construct() {
             parent::__construct();
         }
 
         function render() {
-            $this -> view -> render('main');
+            $this -> view -> render('signup');
         }
     }
 ?>

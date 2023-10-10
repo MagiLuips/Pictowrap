@@ -58,7 +58,7 @@
                                 >
                             </li>
                         </ul>
-                        <a class="btn btn-success" href="sign-in"> Sign in </a>
+                        <a class="btn btn-success" href="signin"> Sign in </a>
                     </div>
                 </div>
             </nav>
