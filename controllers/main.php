@@ -14,6 +14,7 @@
 
         function mensaje() {
             echo 'Mensaje!';
+            echo 1 + 1;
         }
     }
 ?>
