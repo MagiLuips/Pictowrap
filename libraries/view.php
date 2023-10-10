@@ -5,7 +5,7 @@
         }
 
         function render($view) {
-            require 'views/'.$view.'.html';
+            require 'views/'.$view.'.php';
         }
     }
 ?>
