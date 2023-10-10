@@ -1,8 +1,11 @@
 <?php
     class Forum extends Controller {
-     function mensaje(){
-        echo "Totales";
-     }   
+        function __construct() {
+            parent::__construct();
+        }
+        function mensaje(){
+            echo 5+5;
+        }
     }
 
 ?>
