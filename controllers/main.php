@@ -7,13 +7,5 @@
         function render() {
             $this -> view -> render('main');
         }
-
-        function show() {
-            echo 'Show!';
-        }
-
-        function mensaje() {
-            
-        }
     }
 ?>
