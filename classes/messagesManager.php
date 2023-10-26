@@ -18,6 +18,7 @@
                 return false;
             }
             */
+            
             return array_key_exists($key, $this -> messagesList);
         }
     }
