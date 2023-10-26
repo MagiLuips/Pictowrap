@@ -11,7 +11,7 @@
             .page_404 {
                 padding: 40px 0;
                 background: #fff;
-                font-family: "Arvo", serif;
+                font-family: "Rubik", sans-serif;
             }
 
             .page_404 img {
@@ -59,7 +59,7 @@
 
                                 <p>the page you are looking for not avaible!</p>
 
-                                <a href="" class="link_404">Go to Home</a>
+                                <a href="main" class="link_404">Go to Home</a>
                             </div>
                         </div>
                     </div>
