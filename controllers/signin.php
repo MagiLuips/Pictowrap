@@ -12,7 +12,6 @@
         }
 
         function authenticate() {
-            echo "hola";
             if ($this -> issetPost(['username', 'password'])) {
                 $username = $this -> getPost('username');
                 $password = $this -> getPost('password');

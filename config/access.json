@@ -32,7 +32,7 @@
         },
         {
             "site": "admin",
-            "access": "public",
+            "access": "private",
             "role": "admin"
         }
     ],

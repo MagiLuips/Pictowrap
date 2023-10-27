@@ -9,6 +9,6 @@
     define('HOST', 'localhost');
     define('DATABASE', 'pictowrap');
     define('USER', 'root');
-    define('PASSWORD', "");
+    define('PASSWORD', "admin");
     define('CHARSET', 'utf8mb4');
 ?>
