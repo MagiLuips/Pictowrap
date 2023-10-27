@@ -98,8 +98,8 @@
                             aria-hidden="true"
                             preserveAspectRatio="xMidYMid slice"
                             focusable="false" /><rect
-                            width="100%"
                             height="100%"
+                            width="100%"
                             fill="var(--bs-secondary-color)" />
                         <div class="container">
                             <div class="carousel-caption text-start">

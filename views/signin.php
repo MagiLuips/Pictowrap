@@ -13,7 +13,7 @@
     </head>
     <body data-bs-theme="dark" class="d-flex align-items-center py-4">
         <main class="form-signin w-100 m-auto">
-            <form name="signin" action="#" method="post">
+            <form name="signin" action="signin/authenticate" method="post">
                 <img
                     class="mb-4"
                     src="public/images/logo-dark.png"
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-floating">
                     <input
-                        name="passkey"
+                        name="password"
                         type="password"
                         class="form-control"
                         id="floatingPasskey"

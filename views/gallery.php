@@ -60,6 +60,7 @@
                                 >
                             </li>
                         </ul>
+                        <a class="material-symbols-outlined color-white p-2">account_circle</a>
                         <a class="btn btn-success" href="signin"> Sign in </a>
                     </div>
                 </div>

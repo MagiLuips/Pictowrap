@@ -11,7 +11,7 @@
             .page_404 {
                 padding: 40px 0;
                 background: #fff;
-                font-family: "Arvo", serif;
+                font-family: "Rubik", sans-serif;
             }
 
             .page_404 img {

@@ -42,7 +42,7 @@
                 <div class="form-default">
                     <label class="mb-1">Passkey</label
                     ><input
-                        name="passkey"
+                        name="password"
                         type="password"
                         class="form-control"
                         id="inputPasskey"
@@ -52,7 +52,7 @@
                 <div class="form-default">
                     <label class="mb-1">Confirm passkey</label>
                     <input
-                        name="confirm-passkey"
+                        name="confirm-password"
                         type="password"
                         class="form-control"
                         id="inputConfirmPasskey"
