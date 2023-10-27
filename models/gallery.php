@@ -1,6 +1,6 @@
 <?php
 
-class ExpensesModel extends Model implements IModel{
+class GalleryModel extends Model implements IModel{
 
     private $id;
     private $nameImage;
@@ -30,7 +30,7 @@ class ExpensesModel extends Model implements IModel{
             $query->execute([
                 'nameImage' => $this->nameImage, 
                 'author' => $this->author,
-                'd' => $this->date
+                'd' => $this->date,
                 'p' => $this->path
             ]);
             if($query->rowCount()) return true;
@@ -62,18 +62,37 @@ class ExpensesModel extends Model implements IModel{
         }
     }
     
-    //obtener imagenes especificas
-    public function get($nameImage){
+    //obtener imagenes especificas (interfaz imodelo)
+    public function get($id){
         try{
-            $query = $this->prepare('SELECT * FROM images LIKE nameImage = :nameImage');
-            $query->execute([ 'nameImage' => $nameImage]);
+            $query = $this->prepare('SELECT * FROM images LIKE id = :id');
+            $query->execute([ 'id' => $id]);
             $image = $query->fetch(PDO::FETCH_ASSOC);
 
-            $this->from($image);
+            $this->from($id);
 
             return $this;
         }catch(PDOException $e){
             return false;
+        }
+    }
+
+    //obtener imangenes
+    public function getImages($name){
+        $items = [];
+
+        try{
+            $query = $this->prepare("SELECT * FROM images WHERE `name` LIKE '%$name%'");
+            $query->execute();
+
+            while($i = $query->fetch(PDO::FETCH_ASSOC)){            
+                array_push($items, $i);
+            }
+
+            return $items;
+
+        }catch(PDOException $e){
+            echo $e;
         }
     }
 

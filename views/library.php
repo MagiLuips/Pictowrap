@@ -1,6 +1,5 @@
 <?php
     $categories = $this -> data['categories'];
-
 ?>
 <!DOCTYPE html>
 <html lang="es">

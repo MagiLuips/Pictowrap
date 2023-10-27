@@ -1,5 +1,5 @@
 <?php
-    $images = $this->[''];
+    $images = $this -> data['images'];
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +77,7 @@
                     <p class="lead">Searche your favorite images.</p>
                     <form
                         name="search"
-                        action="galery"
+                        action="gallery"
                         method="post"
                         class="d-flex mb-4"
                         role="search">
@@ -92,25 +92,16 @@
                         </button>
                     </form>
                 </div>
-
-            <tbody>
-              <?php foreach ($result as $row) {
+            <div class="mt-4 pb-2">
+              <?php foreach ($images as $row) {
                     echo '<img 
-                    src="public/images/gallery/1.png"
+                    src="'.$row['path'].'"
                     height="200"
                     width="auto"
                     class="border"
                     alt="" >';
               }?>
-
-                <div class="mt-4 pb-2">
-                    <img 
-                        src="public/images/gallery/1.png"
-                        height="200"
-                        width="auto"
-                        class="border"
-                        alt="" >
-                </div>
+              </div>
 
                 <div class="mt-4 pb-2">
                 <img 
