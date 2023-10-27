@@ -1,14 +1,7 @@
-<?php
-    session_start();
-
-    if(!isset($_SESSION["username"]) || $_SESSION["level"] != 1) {
-        echo "<script>window.location = '../';</script>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
     <head>
-        <!-- <script src="../scripts/color-modes.js"></script> -->
+        <!-- <script src="public/scripts/color-modes.js"></script> -->
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,7 +23,7 @@
             href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
         />
 
-        <link href="../styles/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="public/styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
 
         <style>
             .bd-placeholder-img {
@@ -108,9 +101,9 @@
         </style>
 
         <!-- Custom styles for this template -->
-        <link href="../public/styles/sidebars.css" rel="stylesheet" />
-        <link href="../public/styles/global.css" rel="stylesheet" />
-        <link href="../public/styles/admin.css" rel="stylesheet" />
+        <link href="public/styles/sidebars.css" rel="stylesheet" />
+        <link href="public/styles/global.css" rel="stylesheet" />
+        <link href="public/styles/admin.css" rel="stylesheet" />
     </head>
     <body data-bs-theme="dark">
         <main class="d-flex flex-nowrap">
@@ -125,7 +118,7 @@
                     </svg>
                     -->
                     <img
-                        src="../images/logo-dark.png"
+                        src="public/images/logo-dark.png"
                         width="30"
                         height="auto"
                     />
@@ -269,7 +262,7 @@
                         >
                             Account
                         </button>
-                        <div class="collapse" id="account-collapse">
+                        <div class="collapse show" id="account-collapse">
                             <ul
                                 class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
                             >
@@ -296,7 +289,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="../php/signout.php"
+                                        href="signout"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded"
                                         >Sign out</a
                                     >
@@ -308,27 +301,10 @@
             </div>
 
             <div class="b-example-divider b-example-vr"></div>
-
-            <div style="margin: 1em">
+            <div style="display: flex; flex-direction: column; overflow-y: auto; width: 100%;">
+            <div style="margin: 1em ">
                 <h1 class="rubik-title h3 mb-3 fw-normal">Image repository</h1>
                 <p>Modify the images stored in the database.</p>
-                <?php
-                    if(isset($_GET["image_success"])) {
-                        echo '<div class="block-success">The image was added successfully.</div>';
-                    } else if(isset($_GET["image_fail"])) {
-                        echo '<div class="block-fail">A problem occurred while uploading the image.</div>';
-                    }
-                    if(isset($_GET["delete_success"])) {
-                        echo '<div class="block-success">The image was deleted successfully.</div>';
-                    } else if(isset($_GET["delete_fail"])) {
-                        echo '<div class="block-fail">A problem occurred while deleting the image.</div>';
-                    }
-                    if(isset($_GET["update_success"])) {
-                        echo '<div class="block-success">The image was updated successfully.</div>';
-                    } else if(isset($_GET["update_fail"])) {
-                        echo '<div class="block-fail">A problem occurred while updating the image.</div>';
-                    }
-                ?>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -342,7 +318,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            include "../php/connection.php";
+                            include "public/php/connection.php";
                             $connection = connect();
                             $sql = "SELECT * FROM `images`;";
                             $result = mysqli_query($connection, $sql);
@@ -356,9 +332,9 @@
                                 echo '<td>'.$row["author"].'</td>';
                                 echo '<td>'.$row["date"].'</td>';
                                 echo '<td>'.$row["path"].'</td>';
-                                echo '<td><a href="../'.$row["path"].'">View</a></td>';
-                                echo '<td><a href="modify-image.php?id='.$row["id"].'">Update</a></td>';
-                                echo "<td><a href='#' onClick='confirmRemoval(".$row["id"].")'>Delete</a></td></tr>";
+                                echo '<td><a class="blue-button" href="../'.$row["path"].'">View</a></td>';
+                                echo '<td><a class="blue-button" href="/Pictowrap/adminactualizar/actualizar/'.$row["id"].'">Update</a></td>';
+                                echo "<td><a onClick='confirmRemoval2(".$row["id"].")' class='blue-button'>Delete</a></td></tr>";
 
                                 $counter++;
                             }
@@ -369,20 +345,77 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td colspan="3"><a href="add-image.php">Add new</a></td>
+                            <td colspan="3"><a class="blue-button" href="/Pictowrap/adminagregar/add">Add new</a></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </main>
-        <script src="../scripts/bootstrap/bootstrap.min.js"></script>
+            <!--User-->
+            <div style="margin: 1em">
+                <h1 class="rubik-title h3 mb-3 fw-normal">User repository</h1>
+                <p>Modify the users stored in the database.</p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col" colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $connection = connect();
+                            $sql = "SELECT * FROM `users`;";
+                            $result = mysqli_query($connection, $sql);
+                            disconnect($connection); 
 
-        <script src="../scripts/sidebars.js"></script>
+                            $counter = 1;
+
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo '<tr><th scope="row">'.$row["id"].'</th>';
+                                echo '<td>'.$row["username"].'</td>';
+                                echo '<td>'.$row["name"].'</td>';
+                                echo '<td>'.$row["role"].'</td>';
+                                echo '<td>'.$row["photo"].'</td>';
+                                echo '<td><a class="blue-button" href="/Pictowrap/userupdate/actualizar/'.$row["id"].'">Update</a></td>';
+                                echo "<td><a onClick='confirmRemoval(".$row["id"].")' class='blue-button'>Delete</a></td></tr>";
+
+                                $counter++;
+                            }
+                        ?>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="3"><a class="blue-button" href="/Pictowrap/useradd/add">Add new</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </main>
+        
+        <script src="public/scripts/bootstrap/bootstrap.min.js"></script>
+
+        <script src="public/scripts/sidebars.js">
+
+
+        </script>
 
         <script>
+            function confirmRemoval2(id) {
+                if (window.confirm("Do you really wish to delete the image?")) {
+                window.location.href = "/Pictowrap/admin/delete/" + id;
+                }
+            }
             function confirmRemoval(id) {
                 if (window.confirm("Do you really wish to delete the image?")) {
-                window.location.href = "../php/delete-image.php?id=" + id;
+                window.location.href = "/Pictowrap/admin/deleteuser/" + id;
                 }
             }
         </script>
