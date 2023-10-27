@@ -1,3 +1,7 @@
+<?php
+    $images = $this->[''];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -65,9 +69,50 @@
                     </div>
                 </div>
             </nav>
+
             <div class="container">
-                <h1 class="pt-5 pb-3">Gallery!</h1>
-                <div class="pb-2">
+
+            <div class="bg-body-tertiary p-5 rounded mb-3">
+                    <h1 class="font-amatic">Gallery!</h1>
+                    <p class="lead">Searche your favorite images.</p>
+                    <form
+                        name="search"
+                        action="galery"
+                        method="post"
+                        class="d-flex mb-4"
+                        role="search">
+                        <input
+                            class="form-control me-2"
+                            name="name"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search" />
+                        <button class="btn btn-primary" type="submit">
+                            Search
+                        </button>
+                    </form>
+                </div>
+
+            <tbody>
+              <?php foreach ($result as $row) {
+                    echo '<img 
+                    src="public/images/gallery/1.png"
+                    height="200"
+                    width="auto"
+                    class="border"
+                    alt="" >';
+              }?>
+
+                <div class="mt-4 pb-2">
+                    <img 
+                        src="public/images/gallery/1.png"
+                        height="200"
+                        width="auto"
+                        class="border"
+                        alt="" >
+                </div>
+
+                <div class="mt-4 pb-2">
                 <img 
                     src="public/images/gallery/1.png"
                     height="200"

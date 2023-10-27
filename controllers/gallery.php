@@ -6,6 +6,8 @@
 
         function render() {
             $this -> view -> render('gallery');
+            $imagesModel          = new ImagesModel();
+            $images               = $this->getImages(5);
         }
     }
 ?>

@@ -7,8 +7,8 @@
 
     # Database constants.
     define('HOST', 'localhost');
-    define('DATABASE', 'pictowrap');
+    define('DATABASE', 'sistema_mvc');
     define('USER', 'root');
-    define('PASSWORD', "admin");
+    define('PASSWORD', "");
     define('CHARSET', 'utf8mb4');
 ?>
