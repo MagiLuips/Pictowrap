@@ -1,3 +1,7 @@
+<?php
+    $categories = $this -> data['categories'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -13,6 +17,7 @@
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <style>
             .material-symbols-outlined {
                 font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0,
@@ -67,6 +72,7 @@
                                 </a>
                             </li>
                         </ul>
+                        <a class="btn btn-success" href="signout"> Sign out </a>
                     </div>
                 </div>
             </nav>
@@ -111,15 +117,27 @@
                                 >All images</a
                             >
                         </li>
+                        <?php
+                            if (isset($categories)) {
+                                $options = $categories;
+                                foreach($options as $option){
+                                    echo '<li class="nav-item">';
+                                    echo '<a class="nav-link" href=#>' . $option[0] . "</a>";
+                                    echo '</li>';
+                                }
+                            }
+                        ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"
-                                >Games</a
+                            <a class="nav-link" onClick='addCategory()'
+                                ><span class="material-symbols-outlined"
+                                    >add</span
+                                ></a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"
+                            <a class="nav-link" onClick='removeCategory()'
                                 ><span class="material-symbols-outlined"
-                                    >add</span
+                                    >delete</span
                                 ></a
                             >
                         </li>
@@ -170,5 +188,16 @@
                 <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
             </p>
         </footer>
+        <script type="text/javascript">
+            function addCategory() {
+                let name = prompt("Name of the new category:", "Castles")
+                window.location.href = "library/addCategory/" + name;
+            }
+
+            function removeCategory() {
+                let name = prompt("Delete category:", "")
+                window.location.href = "library/removeCategory/" + name;
+            }
+        </script>
     </body>
 </html>

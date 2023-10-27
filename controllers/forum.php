@@ -4,7 +4,13 @@
             parent::__construct();
         }
         function render() {
-            $this -> view -> render('forum');
+            //if (isset($this -> user)) {
+            //   $this -> view -> render('forum', [
+            //        'user' => $this -> user
+            //    ]);
+            //} else {
+                $this -> view -> render('forum');
+            //}
         }
     } 
 

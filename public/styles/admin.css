@@ -1,0 +1,29 @@
+.rubik-title {
+    font-family: "Rubik";
+}
+
+.block-success {
+    padding: 0.8em;
+    border-radius: 0.4em;
+    background-color: var(--bs-teal);
+    color: var(--bs-white);
+}
+
+.block-fail {
+    padding: 0.8em;
+    border-radius: 0.4em;
+    background-color: var(--bs-red);
+    color: var(--bs-white);
+}
+.blue-button {
+    text-decoration: none;
+    color: white;
+    background-color: #0c6efa;
+    padding: 0.1em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    
+}
+

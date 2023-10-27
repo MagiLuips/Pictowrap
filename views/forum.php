@@ -1,3 +1,6 @@
+<?php
+    // if (isset($this -> data['user'])) $user = $this -> data['user'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +76,13 @@
                                 >
                             </li>
                         </ul>
-                        <a class="btn btn-success" href="sign-in"> Sign in </a>
+                        <?php
+                            //if (isset($user)) {
+                            //    echo '<a class="btn btn-success" href="signout"> Sign out </a>';
+                            //} else {
+                                echo '<a class="btn btn-success" href="signin"> Sign in </a>';
+                            //}
+                        ?>
                     </div>
                 </div>
             </nav>

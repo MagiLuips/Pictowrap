@@ -1,11 +1,17 @@
 <?php
-    class Main extends Controller {
+    class Main extends SessionController {
         function __construct() {
             parent::__construct();
         }
 
         function render() {
-            $this -> view -> render('main');
+            if (isset($this -> user)) {
+                $this -> view -> render('main', [
+                    'user' => $this -> user
+                ]);
+            } else {
+                $this -> view -> render('main');
+            }
         }
     }
 ?>
