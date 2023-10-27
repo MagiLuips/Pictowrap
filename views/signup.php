@@ -13,7 +13,7 @@
     </head>
     <body data-bs-theme="dark" class="d-flex align-items-center py-4">
         <main class="form-signin w-100 m-auto">
-            <form name="signup" action="#" method="post">
+            <form name="signup" action="signup/newUser" method="post">
                 <img
                     class="mb-4"
                     src="public/images/logo-dark.png"

@@ -7,7 +7,7 @@
         function render() {
             $actual_link = trim("$_SERVER[REQUEST_URI]");
             $url = explode('/', $actual_link);
-            $this -> view -> errorMessage = '';
+            $this -> view -> error_message = '';
             $this -> view -> render('signin');
         }
 

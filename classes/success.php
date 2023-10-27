@@ -1,6 +1,6 @@
 <?php
     class Success {
-        const SUCCESS_SIGNUP_NEWUSER = "";
+        const SUCCESS_SIGNUP_NEWUSER = "411550dd783fed54585546ae2524c676";
 
         private $successList = [];
 
