@@ -117,7 +117,7 @@
             $url = '';
             for ($i = 0; $i < sizeof($this -> sites); $i++) {
                 if ($this -> sites[$i]['role'] === $role) {
-                    $url = '/MVC3/' . $this -> sites[$i]['site'];
+                    $url = '/Pictowrap/' . $this -> sites[$i]['site'];
                     break;
                 }
             }

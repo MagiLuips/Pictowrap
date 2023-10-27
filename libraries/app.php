@@ -32,7 +32,6 @@
 
                         $controller -> {$url[1]}($param);
                     } else {
-                        echo $url[1];
                         $controller -> {$url[1]}();
                     }
                 } else {

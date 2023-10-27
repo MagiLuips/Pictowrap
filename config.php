@@ -1,5 +1,5 @@
 <?php
-    define("urlsite", "http://localhost/MVC3/");
+    define("urlsite", "http://localhost/Pictowrap/");
 
     const company = "Pictowrap";
 
